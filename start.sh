@@ -6,6 +6,8 @@ if ! id -u "$USERNAME" >/dev/null 2>&1; then
     useradd -d /var/www/html --shell /usr/bin/rssh --password $PASSWORD $USERNAME
 fi
 
+/etc/init.d/ssh start
+
 ./mysql_config.sh
 ./apache_config.sh
 
